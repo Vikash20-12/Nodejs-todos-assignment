@@ -23,36 +23,22 @@ router.get('/todos', async (req, res) => {
 router.get('/user/:id', async (req, res) => {
     const { id } = req.params;
     var userData = [];
-    var todoData = [];
     try {
         //fetching user data
         const userAPI = await axios.get(`https://jsonplaceholder.typicode.com/users/${id}`);
         const userAPIdata = userAPI.data;
-        // console.log(userAPIdata);
         userData.push(userAPIdata);
 
         //fetching todos
         const todoAPI = await axios.get('https://jsonplaceholder.typicode.com/todos');
         const todoAPIdata = todoAPI.data;
-        // console.log(todoAPIdata);
-
-        // for(var i=0; i<todoAPIdata.length; i++){
-        //     if(id === todoAPIdata[i].userId){
-        //         todoData.push({todoAPIdata});
-        //     }
-        // }
 
         for (var i = 0; i < todoAPIdata.length; i++) {
            if( parseInt(id) === todoAPIdata[i].userId){
             userData.push(todoAPIdata[i]);
            }
         }
-
-        // userData.push(todoData);
-
         console.log(userData);
-        // console.log(todoData);
-
     } catch (err) {
         res.status(400).send(err);
     }

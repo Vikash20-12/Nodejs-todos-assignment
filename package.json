@@ -1,0 +1,25 @@
+{
+  "name": "nodejs-todos-assignment",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vikash20-12/Nodejs-todos-assignment.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Vikash20-12/Nodejs-todos-assignment/issues"
+  },
+  "homepage": "https://github.com/Vikash20-12/Nodejs-todos-assignment#readme",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.12"
+  }
+}

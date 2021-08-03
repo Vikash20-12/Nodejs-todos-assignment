@@ -38,7 +38,7 @@ router.get('/user/:id', async (req, res) => {
             userData.push(todoAPIdata[i]);
            }
         }
-        console.log(userData);
+        res.status(200).send(userData);
     } catch (err) {
         res.status(400).send(err);
     }
